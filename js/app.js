@@ -16,7 +16,9 @@
 	pubnub.subscribe({
 		channel: settings.channel,
 		callback: function(m) {
-			document.querySelector('[data-temperature]').dataset.temperature = m.temperature;
+			if(m.temperature) {
+				document.querySelector('[data-temperature]').dataset.temperature = m.temperature;
+			}
 		}
 	})
 
