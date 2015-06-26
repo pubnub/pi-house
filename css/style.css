@@ -1,0 +1,375 @@
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.2.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 1.3em;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 10px;
+}
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html {
+	height: 100%;
+}
+body {
+	padding: 1em 2em;
+	margin: 0;
+	font-family: "Helvetica Neue", "Roboto Light", "Segoe UI Web Light", "Segoe UI Light", "Segoe UI Web Regular", "Segoe UI", Helvetica, Arial, sans-serif; 
+	color: #fff;
+	background: #1c2831 url(../media/bg.png) 0 0 no-repeat;
+	background-size: 800px;
+}
+a {
+	color: #ce1126;
+}
+header {
+  
+}
+h1, h2, h3 {
+	margin: 0;
+	color: #555;
+	text-rendering: optimizeLegibility;
+}
+h1 {
+	font-size: 3.25em;
+	margin: 0;
+	font-weight: normal;
+}
+h2 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+p, footer {
+	margin: 1em 0 .5em;
+}
+footer {
+	clear: both;
+	text-align: right;
+	margin-top: 4em;
+}
+footer .credit {
+	font-size: .8em;
+}
+
+/* Layout */
+
+header {
+	margin-top: 10px;
+	font-size: 20px;
+	line-height: 50px;
+	font-weight: 100;
+	letter-spacing: 2px;
+	color: #bbe4fd;
+}
+header img {
+	width: 30px;
+	height: 30px;
+	margin-top: -5px;
+	margin-right: 10px;
+	margin-left: 20px;
+	position: relative;
+	top: 5px;
+}
+
+.container {
+	margin-top: 3em;
+}
+.pref-container {
+	margin-bottom: 2em;
+}
+.temp-container {
+	font-size: 2em;
+}
+.temp-container::before {
+	content: 'Current room temperature: ';
+}
+.temp {
+	display: inline-block;
+}
+@media (min-width: 768px) {
+	.container {
+		min-width: 768px;
+		max-width: 1200px;
+		display: -webkit-flex;
+		-webkit-flex-direction: row-reverse;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.pref-container {
+		width: 480px;
+	}
+	.temp-container {
+		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		text-align: center;
+	}
+	.temp-container::before {
+		content: '';
+	}
+	.temp {      
+		font-size: 160px;
+		opacity: 0.2;
+	}
+}
+@media (min-width: 1024px) {
+	.pref-container {
+		width: 600px;
+	}
+	.temp {      
+		font-size: 200px;
+	}
+}
+
+/* UI component styles */
+
+.pubnub {
+    width: 80px;
+    height: 25px;
+    opacity: 0.9;
+    background: url(../media/pubnub.png) 0 0 no-repeat;
+    background-size: 100%;
+    position: relative;
+    left: 150px;
+}
+.temp::before {
+	content: attr(data-temperature);
+}
+.preference {
+	margin-bottom: 2em;
+	border: 1px solid rgba(192, 192, 192, 0.15);
+	border-radius: 8px;
+	min-height: 90px;
+	font-size: 1rem;
+}
+.preference h2 {
+	font-size: .9em;
+	background-color: #aaa;
+	color: #fff;
+	padding: 7px 10px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	box-shadow: inset -1px 2px 3px rgba(0,0,0,.25);
+	text-transform: uppercase;
+	margin: 0;
+}
+.caption {
+	font-size: 1.3em;
+	margin: 32px 20px;
+}
+.caption, .toggle-button {
+	display: inline-block;
+}
+.preference > div {
+	position: relative;
+}
+.preference > div:not(:last-child) {
+	border-bottom: 1px rgba(192, 192, 192, 0.15) solid;
+}
+.preference > div > div {
+	width: 100%;
+}
+label {
+	position: absolute;
+	right: 10px;
+	top: 25px;
+}
+label.brightness {
+	width: 240px;
+	padding-right: 26px;
+}
+label.brightness::before {
+	content: "\f185";
+	font-size: 14px;
+	position: absolute;
+	top: 20px;
+	left: -18px;
+	opacity: 0.5;
+}
+label.brightness::after {
+	content: "\f185";
+	font-size: 22px;
+	position: absolute;
+	right: -3px;
+	top: 17px;
+	color: #C9B559;
+}
+label.fire::before {
+	content: "\f06d";
+}
+label.fire::after {
+	content: "\f06d";
+	color: #D34138;
+}
+.text {
+	font-size: 0.9rem;
+	line-height: 1.2em;
+	width: calc(100% - 160px);
+}
+.subtext {   
+	color: #888;  
+}
+.try-mobile {
+	 min-height: 100px;
+	 background-color: rgba(240, 240, 240, 0.5);
+}
+.qrcode {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 10px;
+	top: 0px;
+}
+
+/* Range input */
+
+input[type=range] {
+	-webkit-appearance: none;
+	width: 100%;
+	position: relative;
+	top: 10px;
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
+input[type=range]:focus {
+	outline: none;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: 1px solid #777;
+	height: 44px;
+	width: 18px;
+	border-radius: 5px;
+	background: #D8F2F1;
+	background: -moz-linear-gradient(top, #fefefe, #D8F2F1);
+	background: -webkit-linear-gradient(top, #fefefe, #D8F2F1);
+	cursor: pointer;
+	margin-top: -19px; 
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); 
+}
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 3px;
+	cursor: pointer;
+	background: #aeaeae;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+	background: #74D29F;
+	background: -webkit-linear-gradient(top, #318457, #74D29F);
+	background: linear-gradient(top, #318457, #74D29F);
+}
+
+
+/* Checkboxes as Toggle-buttons */
+
+input[type=checkbox] {
+	display: none;
+}
+.toggle-button {
+	cursor: pointer;
+	background: #4DB6AC; 
+	background: -moz-linear-gradient(top, #318457, #74D29F);
+	background: -webkit-linear-gradient(top, #318457, #74D29F);
+	background: linear-gradient(top, #318457, #74D29F);
+	border-radius: 6px;
+	border: 1px solid #555;
+	width: 160px;
+	position: relative;
+	height: 44px;
+	color: #fff;
+	line-height: 42px;
+	font-size: 16px;
+	text-shadow: 0 -1px 1px #093B5C;
+}
+.toggle-button:before {
+	content: "ON";
+	padding-left: 28px;
+
+}
+.toggle-button:after {
+	content: "OFF";
+	padding-left: 42px;
+}
+label[for=door] .toggle-button:before {
+	content: "OPENED";
+	padding-left: 10px;
+
+}
+label[for=door] .toggle-button:after {
+	content: "CLOSED";
+	padding-left: 4px;
+}
+.toggle-button .switch { 
+	display: block;
+	width: 76px;
+	height: 40px;
+	border-radius: 5px;
+	background: #D8F2F1;
+	background: -moz-linear-gradient(top, #fefefe, #D8F2F1);
+	background: -webkit-linear-gradient(top, #fefefe, #D8F2F1);
+	background: linear-gradient(top, #fefefe, #D8F2F1);
+	border: 1px solid #fff;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+}
+input[type="checkbox"]:not(:checked) + .toggle-button {
+	opacity: 0.6;
+}
+input[type="checkbox"]:checked + .toggle-button .switch {
+	left: 82px;
+}
+input[type="checkbox"]:not(:checked) + .toggle-button {
+	background: -moz-linear-gradient(top, #737373, #aeaeae);
+	background: -webkit-linear-gradient(top, #737373, #aeaeae);
+	background: linear-gradient(top, #737373, #aeaeae);
+}
+input[type="checkbox"]:not(:checked) + .toggle-button .switch {
+	background: -moz-linear-gradient(top, #ececec, #d9d9d9);
+	background: -webkit-linear-gradient(top, #ececec, #d9d9d9);
+	background: linear-gradient(top, #ececec, #d9d9d9);
+}
+input[type="checkbox"]:disabled + .toggle-button {
+	opacity: .25;
+}
+
+
+@media (max-width: 420px) {
+	header {
+		margin-bottom: 2em;
+	}
+	h1 {
+		font-size: 2.4em;
+	}
+}
+
+
+
+
+
+
+
+
