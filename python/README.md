@@ -82,7 +82,7 @@ So, now we have a sensor that keeps measuring data but not doing much with it. Y
 
 PubNub is a secure data stream network, that provides easy to use API to build and scale real time applications. PubNub is used in several verticals such as home automation, taxi dispatch, financial services, gaming and many more. 
 
-This Pi house is all about IoT, and the IoT is all about the devices communicating with each other in real time. PubNub is what enables that communication between devices. Whether its a mobile device or a web broswer talking to embedded devices, sensors or any other device, PubNub glues them  together.
+This Pi house is all about IoT, and IoT is all about the devices communicating with each other in real time. PubNub is what enables that communication between devices. Whether its a mobile device or a web broswer talking to embedded devices, sensors or any other device, PubNub glues them  together.
 
 ## what are you using it here for?
 
@@ -115,8 +115,12 @@ You make sure you import the right libraries needed for this program.
 
 
 # how to use the UI?
+
 ## PubNub console?
+
+At this point, if you are running the python script, open [PubNub Developer Console and Debugger](http://www.pubnub.com/console/), put in the same keys and channel name used in the above python script, you will see the temperature readings on `sensor`. 
 ## whats the deal with visualization?
+
 ## how to use this?
 
 ## conclusion
