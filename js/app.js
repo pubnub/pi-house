@@ -52,7 +52,7 @@
 	}, false);
 
 	lightLiving.addEventListener('change', function(e){
-		publishUpdate({item: 'light-porch', brightness: this.value});
+		publishUpdate({item: 'light-living', brightness: this.value});
 	}, false);
 
 	lightPorch.addEventListener('change', function(e){
@@ -60,6 +60,6 @@
 	}, false);
 
 	fireplace.addEventListener('change', function(e){
-		publishUpdate({item: 'light-fireplace', brightness: this.value, flicker: 5});
+		publishUpdate({item: 'fireplace', brightness: this.value, flicker: 5});
 	}, false);
 })();
