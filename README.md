@@ -9,7 +9,7 @@ A simplified version of Raspberry Pi House
 
 ## Raspberry Pi Python Code Samples
 
-- [Temperature and humidty sensors](https://github.com/pubnub/pi-house/blob/gh-pages/python/temp-hum.py)
+- [Temperature and humidity sensors](https://github.com/pubnub/pi-house/blob/gh-pages/python/temp-hum.py)
 - [Light control](https://github.com/pubnub/pi-house/blob/gh-pages/python/pwm-led-gpio.py)
 
  
