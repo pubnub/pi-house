@@ -34,7 +34,6 @@
 
 		item: 'light-*'
 		brightness: 0 - 10
-		flicker: 5 (static, for now. only for fire)
 
 	*/
 
@@ -60,6 +59,6 @@
 	}, false);
 
 	fireplace.addEventListener('change', function(e){
-		publishUpdate({item: 'fireplace', brightness: +this.value, flicker: 5});
+		publishUpdate({item: 'fireplace', brightness: +this.value});
 	}, false);
 })();
