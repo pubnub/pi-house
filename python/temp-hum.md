@@ -5,7 +5,17 @@ We promised you that we will dig deeper into the individual hardware and softwar
 
 This post will focus on the temperature humidity sensor in the house. I will take you through the steps of setting up the hardware, hooking it up with PubNub, and finally viewing the readings on a browser. This is the first step in building a fully working IoT implementation, both on the hardware and software side.
 
-DESCRIBE HOW IT WORKS WITH JOES IMAGE.
+
+![image](images/home-automation-diagram.png)
+
+The house represents the Pi house with the lights, sensors and door. Using PubNub, you can achieve **bidirectional communication** between the devices at home and your mobile/browser. :
+
+* Read the sensor values such as temperature and humidity on a browser or mobile device. (SENSOR/LIGHT ----> BROWSER/MOBILE DEVICE)
+* Monitor the same devices, and send control messages to them, to turn them on/off, to check their state and to take any action on them. (BROWSER/MOBILE DEVICE ----> SENSOR/LIGHT)
+
+This information is sent from one device to the other, without having to open any ports on the devices, through firewalls and irrespective of the network they are on. PubNub is the key communication component between all the **things** in the **Internet of Things**.
+
+
 
 
 # How to use the sensor, how to hook it up?
@@ -73,6 +83,7 @@ print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
 
 ```
 
+
 So, now we have a sensor that keeps measuring data but not doing much with it. You want to be able to view this information on a browser or mobile device in real time, to be able to do something meaningful with it. Enter PubNub. 
 
 # What is PubNub doing here? How to use it?
@@ -110,15 +121,33 @@ You make sure you import the right libraries needed for this program.
 	pubnub = Pubnub(publish_key='demo', subscribe_key='demo')
 ```
 
+Once you set up the libraries, you can read the sensor values by using the Adafruit DHT library.
 
+```
+h,t = dht.read_retry(dht.DHT22, 4)
+print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
 
+```
 
+In order to view these readings on your browser or mobile device, you will need to **publish** them on a specific channel using PubNub. The browser will **subscribe** to the same channel, and hence receive the message. 
+
+Here we are formatting the data to two decimal places, forming a message to be sent over PubNub, and finally publish the message.
+
+```
+h,t = dht.read_retry(dht.DHT22, 4)
+temp='{0:0.1f}'.format(t)
+hum='{0:0.1f}'.format(h)
+message = {'temperature': temp, 'humidity': hum}
+pubnub.publish(channel=channel, message=message, callback=callback, error=callback)
+
+```
 
 # how to use the UI?
 
 ## PubNub console?
 
-At this point, if you are running the python script, open [PubNub Developer Console and Debugger](http://www.pubnub.com/console/), put in the same keys and channel name used in the above python script, you will see the temperature readings on `sensor`. 
+At this point, if you are running the python script, open [PubNub Developer Console and Debugger](http://www.pubnub.com/console/), put in the same keys and channel name used in the above python script, you will see the temperature readings on `pi-house`. 
+
 ## whats the deal with visualization?
 
 ## how to use this?
