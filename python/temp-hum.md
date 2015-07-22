@@ -7,7 +7,7 @@ This post will focus on the temperature humidity sensor in the house. I will tak
 
 ![image](images/home-automation-diagram.png)
 
-The house represents the Pi house with the lights, sensors and door. Using PubNub, you can achieve **bidirectional communication** between the devices at home and your mobile/browser. :
+The house represents the Pi house with the lights, sensors and door. Using PubNub, you can achieve **bidirectional communication** between the devices at home and your mobile/browser:
 
 * Read the sensor values such as temperature and humidity on a browser or mobile device. 
 
@@ -78,6 +78,8 @@ Next, to install the library execute:
 
 This should compile the code for the library and install it on your device so any Python program can access the Adafruit_DHT python module.
 
+####Reading the sensor values
+
 The code snippet below makes the pi read the humidity and temperature values from the sensor and print it out.
 
 ```
@@ -96,6 +98,7 @@ PubNub is a secure data stream network, that provides easy to use API to build a
 
 This Pi house is all about IoT, and IoT is all about the devices communicating with each other in real time. PubNub is what enables that communication between devices. Whether its a mobile device or a web broswer talking to embedded devices, sensors or any other device, PubNub glues them  together.
 
+
 ##What are you using it for here?
 
 In this specific example, you use the browser to communicate with the sensors and the Pi, to ask for temperature and humidity values. The sensor measures them, and sends it back over PubNub, allowing you to visualize it on your browser. 
@@ -111,6 +114,9 @@ For an in depth introduction to the Pi and PubNub, check this [blog](http://www.
 
 Make sure you have [signed up for PubNub](https://www.pubnub.com/get-started/) to obtain your pub/sub keys.
 
+
+####Importing the libraries
+
 You make sure you import the right libraries needed for this program.
 
 ```
@@ -121,6 +127,7 @@ You make sure you import the right libraries needed for this program.
 	import Adafruit_DHT as dht
 	pubnub = Pubnub(publish_key='demo', subscribe_key='demo')
 ```
+####Reading the sensor values
 
 Once you set up the libraries, you can read the sensor values by using the Adafruit DHT library.
 
@@ -129,6 +136,8 @@ h,t = dht.read_retry(dht.DHT22, 4)
 print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
 
 ```
+
+####PubNub publish/subscribe
 
 In order to view these readings on your browser or mobile device, you will need to **publish** them on a specific channel using PubNub. The browser will **subscribe** to the same channel, and hence receive the message. 
 
@@ -154,8 +163,6 @@ If you are running the python script on the Pi, you can see how the temperature 
 But if you dont want to build a UI, don't worry. The [PubNub Developer Console and Debugger](http://www.pubnub.com/console/) is another way to view messages from PubNub. If you do not have a web page displaying your data, you can still control and receive messages from the house, using the PubNub developer console. It is an easy debugger, where you have to put it in your keys and channel name (same as in the python script). In the message column, you will see the sensor readings as shown below.
 
 ![image](images/console.png)
-
-
 
 
 ##Conclusion
