@@ -1,4 +1,3 @@
-#some background on the Pi house
 ##Introduction
 
 We promised you that we will dig deeper into the individual hardware and software components of the Pi house. The pi house is a lego house that has a raspberry pi model B+ for a brain. It has lights, sensors and a door that can be controlled using a mobile device from anywhere in the world.
@@ -23,15 +22,14 @@ This information is sent from one device to the other, without having to open an
 
 
 
-# How to use the sensor, how to hook it up?
-## what sensor is this?
+##How to use the sensor, how to hook it up?
 
 The DHT22 is a basic, low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin.
 
 
-## how to connect it to the Pi?
+##How to connect it to the Pi?
 
-#### What you will need
+####What you will need
 
 1.The DHT22 sensor
 
@@ -51,7 +49,7 @@ which translates to
 
 I have connected to GPIO4 (pin7), pin 1 for the voltage (3v3) and pin 6 for ground. The resistor goes between the first two pins of the sensor. The third pin of the sensor need not be connected to anything.
 
-## how do you read values from it?
+##How do you read values from it?
 
 We need to use Adafruits DHT library to be able to read the temperature values from the sensor.
 
@@ -91,24 +89,22 @@ print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
 
 So, now we have a sensor that keeps measuring data but not doing much with it. You want to be able to view this information on a browser or mobile device in real time, to be able to do something meaningful with it. Enter PubNub. 
 
-# What is PubNub doing here? How to use it?
-## what is PubNub?
+##What is PubNub doing here? 
 
-## where would you use it?
 
 PubNub is a secure data stream network, that provides easy to use API to build and scale real time applications. PubNub is used in several verticals such as home automation, taxi dispatch, financial services, gaming and many more. 
 
 This Pi house is all about IoT, and IoT is all about the devices communicating with each other in real time. PubNub is what enables that communication between devices. Whether its a mobile device or a web broswer talking to embedded devices, sensors or any other device, PubNub glues them  together.
 
-## what are you using it here for?
+##What are you using it for here?
 
 In this specific example, you use the browser to communicate with the sensors and the Pi, to ask for temperature and humidity values. The sensor measures them, and sends it back over PubNub, allowing you to visualize it on your browser. 
 
-## how do you use it?
+##How do you use it?
 
-#### Installing PubNub
+####Installing PubNub
 
-**install PubNub:**
+**Install PubNub:**
 `pi@raspberrypi ~$ sudo pip install pubnub`
 
 For an in depth introduction to the Pi and PubNub, check this [blog](http://www.pubnub.com/blog/internet-of-things-101-getting-started-w-raspberry-pi/).
@@ -147,13 +143,13 @@ pubnub.publish(channel=channel, message=message, callback=callback, error=callba
 
 ```
 
-# Viualization - UI
+##Viualization - UI
 
 The Pi house is all about controlling and reading device values in real time. You can view this by opening the [UI]() which gives a comprehensive look of all the devices in your house. You can [control the lgihts](link to Tomomi's blog) and even view the temperature and humidity readings. This is what we are interested in. 
 
 If you are running the python script on the Pi, you can see how the temperature and humdity values from the sensor can be seen. They update themselves in real time, thus making it very easy for you to make decisions based on these values. This way, you can be anywhere in the world, and view this data, and make smart decisions. 
 
-## PubNub console?
+##PubNub console
 
 But if you dont want to build a UI, don't worry. The [PubNub Developer Console and Debugger](http://www.pubnub.com/console/) is another way to view messages from PubNub. If you do not have a web page displaying your data, you can still control and receive messages from the house, using the PubNub developer console. It is an easy debugger, where you have to put it in your keys and channel name (same as in the python script). In the message column, you will see the sensor readings as shown below.
 
@@ -162,7 +158,7 @@ But if you dont want to build a UI, don't worry. The [PubNub Developer Console a
 
 
 
-## conclusion
+##Conclusion
 
 We will be posting more tutorials on how to control the lights in the house, how to change their intensity and also how to flicker them. Stay tuned for more pi goodyness.
 
