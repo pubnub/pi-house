@@ -142,15 +142,20 @@ pubnub.publish(channel=channel, message=message, callback=callback, error=callba
 
 ```
 
-# how to use the UI?
+# Viualization - UI
+
+The Pi house is all about controlling and reading device values in real time. You can view this by opening the [UI]() which gives a comprehensive look of all the devices in your house. You can [control the lgihts](link to Tomomi's blog) and even view the temperature and humidity readings. This is what we are interested in. 
+
+If you are running the python script on the Pi, you can see how the temperature and humdity values from the sensor can be seen. They update themselves in real time, thus making it very easy for you to make decisions based on these values. This way, you can be anywhere in the world, and view this data, and make smart decisions. 
 
 ## PubNub console?
 
-At this point, if you are running the python script, open [PubNub Developer Console and Debugger](http://www.pubnub.com/console/), put in the same keys and channel name used in the above python script, you will see the temperature readings on `pi-house`. 
+But if you dont want to build a UI, don't worry. The [PubNub Developer Console and Debugger](http://www.pubnub.com/console/) is another way to view messages from PubNub. If you do not have a web page displaying your data, you can still control and receive messages from the house, using the PubNub developer console. It is an easy debugger, where you have to put it in your keys and channel name (same as in the python script). In the message column, you will see the sensor readings as shown below.
 
-## whats the deal with visualization?
+![image](images/console.png)
 
-## how to use this?
+
+
 
 ## conclusion
 
