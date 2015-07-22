@@ -68,7 +68,7 @@ Open LXTerminal, and download and install the followings:
 `pi@raspberrypi ~$ sudo apt-get install python-pip`
 
 
-**Downloading the Adafruit DHT liibrary:**
+**Downloading the Adafruit DHT library:**
 
 `pi@raspberrypi ~$ git clone https://github.com/adafruit/Adafruit_Python_DHT.git`
 `pi@raspberrypi ~$ cd Adafruit_Python_DHT`
@@ -84,6 +84,10 @@ This should compile the code for the library and install it on your device so an
 ####Reading the sensor values
 
 The code snippet below makes the pi read the humidity and temperature values from the sensor and print it out.
+
+#####Step 1:
+
+![image](images/step1.png)
 
 ```
 h,t = dht.read_retry(dht.DHT22, 4)
@@ -106,7 +110,7 @@ This Pi house is all about IoT, and IoT is all about the devices communicating w
 
 In this specific example, you use the browser to communicate with the sensors and the Pi, to ask for temperature and humidity values. The sensor measures them, and sends it back over PubNub, allowing you to visualize it on your browser. 
 
-##How do you use it?
+##How do you use PubNub?
 
 ####Installing PubNub
 
@@ -118,9 +122,10 @@ For an in depth introduction to the Pi and PubNub, check this [blog](http://www.
 Make sure you have [signed up for PubNub](https://www.pubnub.com/get-started/) to obtain your pub/sub keys.
 
 
+
 ####Importing the libraries
 
-You make sure you import the right libraries needed for this program.
+You make sure you import the right libraries needed for this program. You initialize an instance of PubNub by setting the publish and demo keys which you get when you [sign up](https://www.pubnub.com/get-started/) for the service.
 
 ```
 	import os
@@ -130,23 +135,15 @@ You make sure you import the right libraries needed for this program.
 	import Adafruit_DHT as dht
 	pubnub = Pubnub(publish_key='demo', subscribe_key='demo')
 ```
-####Reading the sensor values
 
-Once you set up the libraries, you can read the sensor values by using the Adafruit DHT library.
-
-![image](images/step1.png)
-
-```
-h,t = dht.read_retry(dht.DHT22, 4)
-print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
-
-```
 
 ####PubNub publish/subscribe
 
 In order to view these readings on your browser or mobile device, you will need to **publish** them on a specific channel using PubNub. The browser will **subscribe** to the same channel, and hence receive the message. 
 
 Here we are formatting the data to two decimal places, forming a message to be sent over PubNub, and finally publish the message.
+
+#####Step 2:
 
 ![image](images/step2.png)
 
