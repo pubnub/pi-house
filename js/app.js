@@ -19,6 +19,9 @@
 			if(m.temperature) {
 				document.querySelector('[data-temperature]').dataset.temperature = m.temperature;
 			}
+			if(m.humidity) {
+				document.querySelector('[data-humidity]').dataset.humidity = m.humidity;
+			}
 		}
 	})
 

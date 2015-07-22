@@ -97,9 +97,18 @@ header img {
 	font-size: 2em;
 }
 .temp-container::before {
-	content: 'Current room temperature: ';
+	content: 'Current room temperature (C): ';
 }
 .temp {
+	display: inline-block;
+}
+.hum-container {
+	font-size: 2em;
+}
+.hum-container::before {
+	content: 'Current room humidity (%): ';
+}
+.hum {
 	display: inline-block;
 }
 @media (min-width: 768px) {
@@ -126,12 +135,27 @@ header img {
 		font-size: 160px;
 		opacity: 0.2;
 	}
+	.hum-container {
+		flex-grow: 1;
+		-webkit-flex-grow: 1;
+		text-align: center;
+	}
+	.hum-container::before {
+		content: '';
+	}
+	.hum {      
+		font-size: 160px;
+		opacity: 0.2;
+	}
 }
 @media (min-width: 1024px) {
 	.pref-container {
 		width: 600px;
 	}
 	.temp {      
+		font-size: 200px;
+	}
+	.hum {      
 		font-size: 200px;
 	}
 }
@@ -148,6 +172,9 @@ header img {
     left: 150px;
 }
 .temp::before {
+	content: attr(data-temperature);
+}
+.hum::before {
 	content: attr(data-temperature);
 }
 .preference {
