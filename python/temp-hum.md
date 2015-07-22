@@ -8,7 +8,7 @@ This post will focus on the temperature humidity sensor in the house. I will tak
 
 
 
-![image](images/home-automation-diagram.png)
+![image](images/overview.png)
 
 The house represents the Pi house with the lights, sensors and door. Using PubNub, you can achieve **bidirectional communication** between the devices at home and your mobile/browser:
 
@@ -134,6 +134,8 @@ You make sure you import the right libraries needed for this program.
 
 Once you set up the libraries, you can read the sensor values by using the Adafruit DHT library.
 
+![image](images/step1.png)
+
 ```
 h,t = dht.read_retry(dht.DHT22, 4)
 print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
@@ -145,6 +147,8 @@ print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
 In order to view these readings on your browser or mobile device, you will need to **publish** them on a specific channel using PubNub. The browser will **subscribe** to the same channel, and hence receive the message. 
 
 Here we are formatting the data to two decimal places, forming a message to be sent over PubNub, and finally publish the message.
+
+![image](images/step2.png)
 
 ```
 h,t = dht.read_retry(dht.DHT22, 4)
