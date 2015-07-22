@@ -4,7 +4,7 @@ We promised you that we will dig deeper into the individual hardware and softwar
 
 This post will focus on the temperature humidity sensor in the house. I will take you through the steps of setting up the hardware, hooking it up with PubNub, and finally viewing the readings on a browser. This is the first step in building a fully working IoT implementation, both on the hardware and software side.
 
-###Concept
+##Concept
 
 
 ![image](images/overview.png)
@@ -151,7 +151,7 @@ pubnub.publish(channel=channel, message=message, callback=callback, error=callba
 
 ```
 
-##Viualization - UI
+##Visualization - UI
 
 The Pi house is all about controlling and reading device values in real time. You can view this by opening the [UI](http://pubnub.github.io/pi-house/) which gives a comprehensive look of all the devices in your house. You can [control the lgihts](link to Tomomi's blog) and even view the temperature and humidity readings. This is what we are interested in. 
 
