@@ -12,11 +12,11 @@ The house represents the Pi house with the lights, sensors and door. Using PubNu
 
 * Read the sensor values such as temperature and humidity on a browser or mobile device. 
 
-######(SENSOR/LIGHT ----> BROWSER/MOBILE DEVICE)
+	######(SENSOR/LIGHT ----> BROWSER/MOBILE DEVICE)
 
 * Monitor the same devices, and send control messages to them, to turn them on/off, to check their state and to take any action on them. 
 
-######(BROWSER/MOBILE DEVICE ----> SENSOR/LIGHT)
+	######(BROWSER/MOBILE DEVICE ----> SENSOR/LIGHT)
 
 This information is sent from one device to the other, without having to open any ports on the devices, through firewalls and irrespective of the network they are on. PubNub is the key communication component between all the **things** in the **Internet of Things**.
 
