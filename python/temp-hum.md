@@ -7,6 +7,7 @@ This post will focus on the temperature humidity sensor in the house. I will tak
 ###Concept
 
 
+
 ![image](images/home-automation-diagram.png)
 
 The house represents the Pi house with the lights, sensors and door. Using PubNub, you can achieve **bidirectional communication** between the devices at home and your mobile/browser:
