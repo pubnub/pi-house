@@ -4,6 +4,8 @@ We promised you that we will dig deeper into the individual hardware and softwar
 
 This post will focus on the temperature humidity sensor in the house. I will take you through the steps of setting up the hardware, hooking it up with PubNub, and finally viewing the readings on a browser. This is the first step in building a fully working IoT implementation, both on the hardware and software side.
 
+###Concept
+
 
 ![image](images/home-automation-diagram.png)
 
