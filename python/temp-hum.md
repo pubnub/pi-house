@@ -61,9 +61,11 @@ The Python code to work with Adafruit's DHT sensors is available on [Github](htt
 Open LXTerminal, and download and install the followings:
 
 **Install Python:**
+
 `pi@raspberrypi ~$ sudo apt-get install python-dev`
 
 **Install pip:**
+
 `pi@raspberrypi ~$ sudo apt-get install python-pip`
 
 **Downloading the Adafruit DHT library:**
@@ -73,6 +75,7 @@ Open LXTerminal, and download and install the followings:
 `pi@raspberrypi ~$ cd Adafruit_Python_DHT`
 
 **Installing the library**
+
 `pi@raspberrypi ~$ sudo python setup.py install`
 
 This should compile the code for the library and install it on your device so any Python program can access the Adafruit_DHT python module.
