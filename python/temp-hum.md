@@ -67,7 +67,9 @@ Open LXTerminal, and download and install the followings:
 `pi@raspberrypi ~$ sudo apt-get install python-pip`
 
 **Downloading the Adafruit DHT library:**
+
 `pi@raspberrypi ~$ git clone https://github.com/adafruit/Adafruit_Python_DHT.git`
+
 `pi@raspberrypi ~$ cd Adafruit_Python_DHT`
 
 **Installing the library**
