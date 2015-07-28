@@ -14,7 +14,9 @@ def callback(message):
 #published in this fashion to comply with Eon
 while True:
     h,t = dht.read_retry(dht.DHT22, 4)
-    message = {'temperature': t, 'humidity': h}
+    temp={0:0.1f}.format(t)
+    hum={1:0.1f}.format(h)
+    message = {'temperature': temp, 'humidity': hum}
     print 'Temp={0:0.1f}*C Humidity={1:0.1f}%'.format(t, h)
     pubnub.publish(channel=channel, message=message, callback=callback, error=callback)
 
