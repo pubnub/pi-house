@@ -1,14 +1,14 @@
-# Controlling Lights with Pulse Width Modulations
+# Raspberry Pi House Breakdown: Controlling Lights with Pulse Width Modulations
 
-https://steps0x29a.wordpress.com/2014/02/18/raspberry-pi-pwm-dimmed-led-in-python/
-http://shallowsky.com/blog/hardware/pi-motors.html
+This is a part of the [Raspberry Pi Smart House][pi-house] tutorial series that each tutorial explains in a small chunk of the bigger circuit of the little Pi House. 
 
 
-Software PWM is available in RPi.GPIO Python library 0.5.6+
-https://pypi.python.org/pypi/RPi.GPIO
+In [this tutorial](http://www.pubnub.com/blog/building-raspberry-pi-smart-house-part-2/), you will learn how to control lights (LED) brightness and emulating fireplace by flickering LED with Raspberry Pi's digital signal using Pulse width modulation (PWM).
 
-Hardware PWM
 
-Only the PWM1 peripheral can be mapped onto a GPIO pin (GPIO18) available on the RPi’s 26-pin header. 
 
-http://web.archive.org/web/20150314233026/http://hertaville.com/2014/07/07/rpipwm/
+![Pi House](//raw.githubusercontent.com/pubnub/pi-house/gh-pages/pi-house.jpg "Raspberry Pi Lego House")
+
+
+
+
